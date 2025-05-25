@@ -1,0 +1,27 @@
+# Node and Next.js
+node_modules/
+.next/
+
+# Env files
+.env*
+
+# Logs
+*.log
+
+# Editor and system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Test and coverage
+coverage/
+test/
+tests/
+*.test.*
+*.spec.*
+
+# Local versioned folders
+v.1/
+
+# Misc
+*.md 
