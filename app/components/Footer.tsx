@@ -8,7 +8,7 @@ export default function Footer() {
           © {new Date().getFullYear()} <Link href="/" className="font-semibold hover:underline">Hudson Virtual</Link>. All rights reserved.
         </div>
         <div className="text-center md:text-right text-xs opacity-80">
-          Proudly created by Hudson Virtual
+          Website design & development by SGP Digital
         </div>
       </div>
     </footer>
