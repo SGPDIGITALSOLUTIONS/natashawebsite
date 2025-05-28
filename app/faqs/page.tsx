@@ -69,6 +69,20 @@ const faqs = [
 export default function FAQsPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const handleQuestionClick = (index: number) => {
+    // If clicking the same question, close it
+    if (openIndex === index) {
+      setOpenIndex(null);
+    } else {
+      // If clicking a different question, close the current one first
+      setOpenIndex(null);
+      // Use setTimeout to create a smooth transition between closing and opening
+      setTimeout(() => {
+        setOpenIndex(index);
+      }, 300); // Match this with the animation duration
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 pt-40 pb-20">
       <div className="max-w-3xl mx-auto px-4">
@@ -79,7 +93,7 @@ export default function FAQsPage() {
           {faqs.map((faq, index) => (
             <div key={index} className="relative">
               <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                onClick={() => handleQuestionClick(index)}
                 className="w-full text-left focus:outline-none group"
               >
                 <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
