@@ -67,21 +67,7 @@ const faqs = [
 ];
 
 export default function FAQsPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const handleQuestionClick = (index: number) => {
-    // If clicking the same question, close it
-    if (openIndex === index) {
-      setOpenIndex(null);
-    } else {
-      // If clicking a different question, close the current one first
-      setOpenIndex(null);
-      // Use setTimeout to create a smooth transition between closing and opening
-      setTimeout(() => {
-        setOpenIndex(index);
-      }, 300); // Match this with the animation duration
-    }
-  };
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 pt-40 pb-20">
@@ -91,29 +77,29 @@ export default function FAQsPage() {
         
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="relative">
-              <button
-                onClick={() => handleQuestionClick(index)}
-                className="w-full text-left focus:outline-none group"
-              >
-                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-xl font-semibold text-purple-700 group-hover:text-purple-800 transition-colors">
-                      {faq.question}
-                    </h2>
-                    <motion.div
-                      animate={{ rotate: openIndex === index ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-purple-600"
-                    >
-                      ▼
-                    </motion.div>
-                  </div>
+            <div 
+              key={index} 
+              className="relative"
+              onMouseEnter={() => setHoverIndex(index)}
+              onMouseLeave={() => setHoverIndex(null)}
+            >
+              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl font-semibold text-purple-700 group-hover:text-purple-800 transition-colors text-center w-full">
+                    {faq.question}
+                  </h2>
+                  <motion.div
+                    animate={{ rotate: hoverIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-purple-600 ml-4"
+                  >
+                    ▼
+                  </motion.div>
                 </div>
-              </button>
+              </div>
               
               <AnimatePresence>
-                {openIndex === index && (
+                {hoverIndex === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
@@ -122,7 +108,7 @@ export default function FAQsPage() {
                     className="overflow-hidden"
                   >
                     <div className="bg-white/80 backdrop-blur-sm rounded-b-xl p-6 mt-1 shadow-sm">
-                      <p className="text-gray-600 whitespace-pre-line">{faq.answer}</p>
+                      <p className="text-gray-600 whitespace-pre-line text-center">{faq.answer}</p>
                     </div>
                   </motion.div>
                 )}
