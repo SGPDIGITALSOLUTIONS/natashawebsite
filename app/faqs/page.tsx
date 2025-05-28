@@ -1,4 +1,7 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
@@ -64,17 +67,52 @@ const faqs = [
 ];
 
 export default function FAQsPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 pt-40 pb-20">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-3xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-2 text-center">Frequently Asked Questions</h1>
         <p className="text-lg text-gray-600 mb-12 text-center">Everything you need to know about working with Hudson Virtual Business Services</p>
         
-        <div className="space-y-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
-              <h2 className="text-xl font-semibold text-purple-700 mb-3">{faq.question}</h2>
-              <p className="text-gray-600 whitespace-pre-line">{faq.answer}</p>
+            <div key={index} className="relative">
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full text-left focus:outline-none group"
+              >
+                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-semibold text-purple-700 group-hover:text-purple-800 transition-colors">
+                      {faq.question}
+                    </h2>
+                    <motion.div
+                      animate={{ rotate: openIndex === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-purple-600"
+                    >
+                      ▼
+                    </motion.div>
+                  </div>
+                </div>
+              </button>
+              
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="bg-white/80 backdrop-blur-sm rounded-b-xl p-6 mt-1 shadow-sm">
+                      <p className="text-gray-600 whitespace-pre-line">{faq.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
