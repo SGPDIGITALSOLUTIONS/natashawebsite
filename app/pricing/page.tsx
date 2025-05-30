@@ -488,6 +488,28 @@ export default function PricingPage() {
                 <p className="text-gray-600 mb-8">
                   Have a specific project in mind? Let's discuss your requirements and create a custom solution tailored to your needs.
                 </p>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Custom project scoping</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Fixed project pricing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Clear deliverables</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Regular progress updates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Flexible timeline options</span>
+                  </li>
+                </ul>
                 <div className="bg-purple-50 p-6 rounded-lg mb-8">
                   <h4 className="text-lg font-semibold text-purple-900 mb-4">Book a Free Consultation</h4>
                   <p className="text-gray-600 mb-6">
