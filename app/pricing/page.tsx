@@ -15,13 +15,13 @@ export default function PricingPage() {
   
   // Pricing calculations
   const retainerRates = {
-    5: 450,
-    10: 850,
-    15: 1200,
-    20: 1450,
-    25: 1750,
-    30: 2000,
-    40: 2500
+    5: 140,    // 5 hours * £28
+    10: 280,   // 10 hours * £28
+    15: 420,   // 15 hours * £28
+    20: 560,   // 20 hours * £28
+    25: 700,   // 25 hours * £28
+    30: 840,   // 30 hours * £28
+    40: 1120   // 40 hours * £28
   };
   
   const paygoRate = 30; // £ per hour
