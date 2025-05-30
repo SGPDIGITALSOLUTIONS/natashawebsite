@@ -83,7 +83,11 @@ export default function ServicesPage() {
           "Tailored solutions for your needs",
           "Flexible service packages",
           "Personalized support approach"
-        ]
+        ],
+        cta: {
+          text: "Book a Free Consultation",
+          href: "/contact"
+        }
       }
     },
   ];
@@ -155,7 +159,7 @@ export default function ServicesPage() {
                     {services[activeIdx].example.description}
                   </p>
                   <div className="text-purple-900 font-medium mb-2">How We Help:</div>
-                  <ul className="text-gray-600 space-y-2">
+                  <ul className="text-gray-600 space-y-2 mb-4">
                     {services[activeIdx].example.solutions.map((solution, idx) => (
                       <li key={idx} className="flex items-center">
                         <span className="text-purple-600 mr-2">•</span>
@@ -163,6 +167,16 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {services[activeIdx].example.cta && (
+                    <div className="mt-4">
+                      <Link 
+                        href={services[activeIdx].example.cta.href}
+                        className="inline-block bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors"
+                      >
+                        {services[activeIdx].example.cta.text}
+                      </Link>
+                    </div>
+                  )}
                 </motion.div>
               ) : (
                 <motion.div
