@@ -21,10 +21,6 @@ const faqs = [
     answer: "If you're overwhelmed by admin, missing deadlines, or feel like you're spending more time in your business than on it, it's probably time. A VA helps you buy back your time and headspace."
   },
   {
-    question: "What are your rates?",
-    answer: "I will accept sexual favours"
-  },
-  {
     question: "Do you offer contracts?",
     answer: "Yes, all client relationships begin with a service agreement outlining the scope of work, confidentiality, rates, and terms. Transparency is key!"
   },
@@ -35,14 +31,6 @@ const faqs = [
   {
     question: "Is there a minimum number of hours I have to book?",
     answer: "For retainer clients, I offer packages starting from 10 hours per month. For ad-hoc work, I recommend booking at least 5 hours to ensure efficiency and continuity."
-  },
-  {
-    question: "How do we communicate?",
-    answer: "I'm flexible—email, phone, WhatsApp, Slack, or Zoom—whatever suits you best. We'll find a rhythm that works for both of us."
-  },
-  {
-    question: "Can I try before committing to a retainer?",
-    answer: "Yes! I offer a one-off power hour or a mini admin audit so you can get a feel for how I work and the value I can bring to your business."
   },
   {
     question: "What if my needs change or I want to pause?",
