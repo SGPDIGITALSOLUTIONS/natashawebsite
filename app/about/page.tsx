@@ -5,17 +5,17 @@ import { FaUserTie, FaHandsHelping, FaSmile, FaHeart, FaLightbulb } from 'react-
 import { motion } from 'framer-motion';
 
 const clientTypes = [
-  { icon: <FaUserTie className="text-purple-600 text-2xl mb-2" />, label: 'Consultants' },
-  { icon: <FaHandsHelping className="text-purple-600 text-2xl mb-2" />, label: 'Therapists' },
-  { icon: <FaSmile className="text-purple-600 text-2xl mb-2" />, label: 'Beauty & Wellness' },
-  { icon: <FaLightbulb className="text-purple-600 text-2xl mb-2" />, label: 'Entrepreneurs' },
-  { icon: <FaHeart className="text-purple-600 text-2xl mb-2" />, label: 'Charities' },
+  { icon: <FaUserTie className="text-purple-600 text-2xl mb-2" />, label: 'Small Charities' },
+  { icon: <FaHandsHelping className="text-purple-600 text-2xl mb-2" />, label: 'Solopreneurs' },
+  { icon: <FaSmile className="text-purple-600 text-2xl mb-2" />, label: 'Women-led Businesses' },
+  { icon: <FaLightbulb className="text-purple-600 text-2xl mb-2" />, label: 'Health & Wellness' },
+  { icon: <FaHeart className="text-purple-600 text-2xl mb-2" />, label: 'Mission-driven' },
 ];
 
 const values = [
-  { icon: <FaSmile className="text-purple-600 text-xl mr-2" />, title: 'Friendly', desc: 'Always approachable and positive.' },
-  { icon: <FaHandsHelping className="text-purple-600 text-xl mr-2" />, title: 'Reliable', desc: 'You can count on me to deliver.' },
-  { icon: <FaLightbulb className="text-purple-600 text-xl mr-2" />, title: 'Resourceful', desc: 'I find solutions and make things happen.' },
+  { icon: <FaSmile className="text-purple-600 text-xl mr-2" />, title: 'Experienced', desc: '25+ years in admin and customer service.' },
+  { icon: <FaHandsHelping className="text-purple-600 text-xl mr-2" />, title: 'Dedicated', desc: 'I become part of your team and mission.' },
+  { icon: <FaLightbulb className="text-purple-600 text-xl mr-2" />, title: 'Tailored', desc: 'Unique solutions for your unique needs.' },
 ];
 
 export default function AboutPage() {
@@ -35,8 +35,30 @@ export default function AboutPage() {
             />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-2">Meet Natasha</h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-4">
-            Hi! I'm Natasha, a skilled administrative support professional with 10+ years' experience. I'm passionate about helping small businesses, charities, and entrepreneurs thrive by making their day-to-day easier, friendlier, and more efficient.
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-4">
+            Hi, I'm Natasha – the heart and hands behind Hudson Virtual Business Services (also affectionately known as your Admin Unicorn).
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Main Content */}
+      <section className="max-w-4xl mx-auto px-4 py-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white rounded-xl shadow-lg p-8 mb-12">
+          <p className="text-gray-700 mb-6">
+            With over 25 years of experience in admin and customer service, I've worked across retail, travel, and research—helping businesses stay organised, on track, and thriving. Now, as a virtual assistant, I specialise in supporting small charities, solopreneurs, and women-led businesses, especially those in the health and wellness space. My sweet spot? Working with people who care deeply about their work but are drowning in the admin that comes with it.
+          </p>
+          <p className="text-gray-700 mb-6">
+            I'm not your typical VA. I bring more than just efficiency—I bring energy, insight, and heart. I invest in the businesses I support. When we work together, I don't just tick tasks off your to-do list—I become part of your team, someone who understands your mission and helps you bring it to life.
+          </p>
+          <p className="text-gray-700">
+            My clients often tell me I bring calm to their chaos, and that I just "get it"—how their business works, what they need, and how to keep things flowing. I thrive on trust, communication, and a shared commitment to making your business stronger and more sustainable.
+          </p>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-purple-50 rounded-xl shadow-lg p-8 mb-12">
+          <h2 className="text-2xl font-bold text-purple-900 mb-4">A Bit of Unicorn Magic</h2>
+          <p className="text-gray-700">
+            Why Admin Unicorn? Because I'm all about unique, tailored support. No cookie-cutter solutions here. I blend practicality with a sprinkle of creativity and a good dose of care. It's not just business—it's personal, in the best way.
           </p>
         </motion.div>
       </section>

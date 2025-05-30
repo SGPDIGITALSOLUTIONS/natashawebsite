@@ -21,12 +21,8 @@ const faqs = [
     answer: "If you're overwhelmed by admin, missing deadlines, or feel like you're spending more time in your business than on it, it's probably time. A VA helps you buy back your time and headspace."
   },
   {
-    question: "How do you work with clients?",
-    answer: "I work remotely from my fully equipped home office in the UK. We usually start with a discovery call to understand your needs, then we agree on a retainer package or ad-hoc hours, depending on your workflow."
-  },
-  {
     question: "What are your rates?",
-    answer: "My rates typically range from £28–£30 per hour, depending on the type and complexity of work. I offer:\n\n• Monthly retainers (from 10 hours/month)\n• Project-based pricing\n• Ad hoc support (subject to availability)"
+    answer: "I will accept sexual favours"
   },
   {
     question: "Do you offer contracts?",
@@ -43,10 +39,6 @@ const faqs = [
   {
     question: "How do we communicate?",
     answer: "I'm flexible—email, phone, WhatsApp, Slack, or Zoom—whatever suits you best. We'll find a rhythm that works for both of us."
-  },
-  {
-    question: "How do I get started?",
-    answer: "Easy! Just head to my Contact page and book a free discovery call. We'll have a no-pressure chat about your needs and how I can help."
   },
   {
     question: "Can I try before committing to a retainer?",
