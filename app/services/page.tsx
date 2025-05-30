@@ -17,6 +17,15 @@ export default function ServicesPage() {
         'Meeting/Event Preparation',
         'Meeting Minutes',
       ],
+      example: {
+        title: "The Calendar Chaos",
+        description: "I spend 2 hours every Monday just scheduling meetings and responding to calendar invites. My inbox is a mess, and I'm constantly double-booking myself.",
+        solutions: [
+          "Manage your calendar and schedule meetings",
+          "Coordinate with multiple time zones",
+          "Send meeting reminders and follow-ups"
+        ]
+      }
     },
     {
       icon: <FaFileAlt className="text-3xl text-purple-600 mb-4" />,
@@ -30,6 +39,15 @@ export default function ServicesPage() {
         'Travel Research',
         'Business Research',
       ],
+      example: {
+        title: "The Research Rabbit Hole",
+        description: "I need to find the best venue for our annual conference, but I'm spending hours comparing options, reading reviews, and trying to coordinate with different time zones.",
+        solutions: [
+          "Comprehensive venue research and comparison",
+          "Detailed cost analysis and budget tracking",
+          "Time zone coordination and scheduling assistance"
+        ]
+      }
     },
     {
       icon: <FaUserTie className="text-3xl text-purple-600 mb-4" />,
@@ -43,6 +61,15 @@ export default function ServicesPage() {
         'Meeting Preparation',
         'Appointment Making',
       ],
+      example: {
+        title: "The Travel Tangle",
+        description: "I need to book flights, hotels, and transfers for my team's quarterly meeting, but I'm drowning in options and don't have time to compare prices.",
+        solutions: [
+          "Research and book travel arrangements",
+          "Create detailed travel itineraries",
+          "Handle travel changes and emergencies"
+        ]
+      }
     },
     {
       icon: <FaComments className="text-3xl text-purple-600 mb-4" />,
@@ -53,6 +80,15 @@ export default function ServicesPage() {
         'Content Scheduling',
         'Content Planning',
       ],
+      example: {
+        title: "The Content Crunch",
+        description: "My social media presence is inconsistent because I can't keep up with creating and scheduling content while running my business.",
+        solutions: [
+          "Create engaging content calendar",
+          "Schedule posts across platforms",
+          "Monitor and engage with audience"
+        ]
+      }
     },
     {
       icon: <FaProjectDiagram className="text-3xl text-purple-600 mb-4" />,
@@ -62,6 +98,15 @@ export default function ServicesPage() {
         'Accountability Sessions',
         'Process Improvement',
       ],
+      example: {
+        title: "The Project Puzzle",
+        description: "We're implementing a new CRM system, but the project is falling behind schedule and team members are confused about their responsibilities.",
+        solutions: [
+          "Create clear project timelines",
+          "Coordinate team communications",
+          "Track progress and milestones"
+        ]
+      }
     },
     {
       icon: <FaChartBar className="text-3xl text-purple-600 mb-4" />,
@@ -69,6 +114,15 @@ export default function ServicesPage() {
       items: [
         'Responding to client emails',
       ],
+      example: {
+        title: "The Inbox Overload",
+        description: "Customer inquiries are piling up in my inbox, and I'm struggling to respond quickly while maintaining quality service.",
+        solutions: [
+          "Timely response to customer inquiries",
+          "Maintain consistent communication",
+          "Track and follow up on issues"
+        ]
+      }
     },
   ];
 
@@ -101,7 +155,9 @@ export default function ServicesPage() {
               {services.map((service, idx) => (
                 <motion.div
                   key={service.title}
-                  className="bg-purple-50 rounded-lg p-4 border border-purple-100 hover:border-purple-300 transition-colors"
+                  className={`bg-purple-50 rounded-lg p-4 border transition-colors cursor-pointer ${
+                    activeIdx === idx ? 'border-purple-400 shadow-md' : 'border-purple-100 hover:border-purple-300'
+                  }`}
                   onMouseEnter={() => setActiveIdx(idx)}
                   onMouseLeave={() => setActiveIdx(null)}
                   onFocus={() => setActiveIdx(idx)}
@@ -114,24 +170,14 @@ export default function ServicesPage() {
                     <div className="text-purple-600 mt-1">{service.icon}</div>
                     <div>
                       <h3 className="font-semibold text-purple-900 mb-2">{service.title}</h3>
-                      <AnimatePresence>
-                        {activeIdx === idx && (
-                          <motion.ul
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="text-sm text-gray-600 space-y-1"
-                          >
-                            {service.items.map((item) => (
-                              <li key={item} className="flex items-center">
-                                <span className="text-purple-600 mr-2">•</span>
-                                {item}
-                              </li>
-                            ))}
-                          </motion.ul>
-                        )}
-                      </AnimatePresence>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        {service.items.map((item) => (
+                          <li key={item} className="flex items-center">
+                            <span className="text-purple-600 mr-2">•</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </motion.div>
@@ -141,119 +187,42 @@ export default function ServicesPage() {
 
           {/* Real-World Examples */}
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-purple-900 mb-6">What Does Admin Support Look Like?</h2>
-            <div className="space-y-6">
-              {/* Example 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-purple-50 rounded-lg p-4 border border-purple-100"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-purple-900 mb-2">The Calendar Chaos</h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      "I spend 2 hours every Monday just scheduling meetings and responding to calendar invites. My inbox is a mess, and I'm constantly double-booking myself."
-                    </p>
-                    <div className="text-sm text-purple-900 font-medium">How We Help:</div>
-                    <ul className="text-sm text-gray-600 space-y-1 mt-1">
-                      <li className="flex items-center">
+            <h2 className="text-2xl font-bold text-purple-900 mb-6">What Does It Look Like?</h2>
+            <AnimatePresence mode="wait">
+              {activeIdx !== null ? (
+                <motion.div
+                  key={activeIdx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-purple-50 rounded-lg p-6 border border-purple-100"
+                >
+                  <h3 className="font-semibold text-purple-900 text-xl mb-3">{services[activeIdx].example.title}</h3>
+                  <p className="text-gray-600 mb-4">
+                    {services[activeIdx].example.description}
+                  </p>
+                  <div className="text-purple-900 font-medium mb-2">How We Help:</div>
+                  <ul className="text-gray-600 space-y-2">
+                    {services[activeIdx].example.solutions.map((solution, idx) => (
+                      <li key={idx} className="flex items-center">
                         <span className="text-purple-600 mr-2">•</span>
-                        Manage your calendar and schedule meetings
+                        {solution}
                       </li>
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Coordinate with multiple time zones
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Send meeting reminders and follow-ups
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Example 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-purple-50 rounded-lg p-4 border border-purple-100"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-purple-900 mb-2">The Travel Tangle</h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      "I need to book flights, hotels, and transfers for my team's quarterly meeting, but I'm drowning in options and don't have time to compare prices."
-                    </p>
-                    <div className="text-sm text-purple-900 font-medium">How We Help:</div>
-                    <ul className="text-sm text-gray-600 space-y-1 mt-1">
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Research and book travel arrangements
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Create detailed travel itineraries
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Handle travel changes and emergencies
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Example 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-purple-50 rounded-lg p-4 border border-purple-100"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-purple-900 mb-2">The Document Dilemma</h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      "I have a pile of documents that need formatting, proofreading, and organizing. My team's reports are all over the place, and I need them standardized."
-                    </p>
-                    <div className="text-sm text-purple-900 font-medium">How We Help:</div>
-                    <ul className="text-sm text-gray-600 space-y-1 mt-1">
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Format and proofread documents
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Create standardized templates
-                      </li>
-                      <li className="flex items-center">
-                        <span className="text-purple-600 mr-2">•</span>
-                        Organize and maintain document libraries
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                    ))}
+                  </ul>
+                </motion.div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-center text-gray-500 py-12"
+                >
+                  <p className="text-lg">Hover over a service to see how we can help</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
