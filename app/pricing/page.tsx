@@ -15,12 +15,12 @@ export default function PricingPage() {
   
   // Pricing calculations
   const retainerRates = {
-    5: 140,    // 5 hours * £28
     10: 280,   // 10 hours * £28
     15: 420,   // 15 hours * £28
     20: 560,   // 20 hours * £28
     25: 700,   // 25 hours * £28
     30: 840,   // 30 hours * £28
+    35: 980,   // 35 hours * £28
     40: 1120   // 40 hours * £28
   };
   
@@ -342,7 +342,7 @@ export default function PricingPage() {
                 
                 <div className="mb-6">
                   <label htmlFor="retainer-hours" className="block text-sm font-medium text-gray-700 mb-1">
-                    Select hours per week:
+                    Select hours per month:
                   </label>
                   <select 
                     id="retainer-hours"
@@ -350,12 +350,12 @@ export default function PricingPage() {
                     onChange={(e) => setRetainerHours(Number(e.target.value))}
                     className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   >
-                    <option value={5}>5 hours</option>
                     <option value={10}>10 hours</option>
                     <option value={15}>15 hours</option>
                     <option value={20}>20 hours</option>
                     <option value={25}>25 hours</option>
                     <option value={30}>30 hours</option>
+                    <option value={35}>35 hours</option>
                     <option value={40}>40 hours</option>
                   </select>
                 </div>
@@ -373,7 +373,7 @@ export default function PricingPage() {
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start">
                     <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>{retainerHours} hours of support per week</span>
+                    <span>{retainerHours} hours of support per month</span>
                   </li>
                   <li className="flex items-start">
                     <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
@@ -578,38 +578,6 @@ export default function PricingPage() {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-white px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-purple-900 mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-8">
-            {[
-              {
-                question: "Can I switch between Dedicated and On-Demand support?",
-                answer: "Yes, you can switch between plans with 30 days' notice. If you're on a Dedicated Support Plan, you'll need to complete your minimum commitment period first."
-              },
-              {
-                question: "What if I need more hours than my Dedicated Support Plan?",
-                answer: "Additional hours can be purchased at the On-Demand rate of £30 per hour. We'll notify you before you reach your monthly limit."
-              },
-              {
-                question: "How do I know how many hours I'll need?",
-                answer: "We recommend starting with our 5-hour Dedicated Support Plan or On-Demand option to assess your needs. We'll help you track usage and adjust as needed."
-              },
-              {
-                question: "Is there a minimum purchase for On-Demand support?",
-                answer: "Yes, the minimum purchase is 5 hours at £30 per hour (£150 total). Hours are valid for 3 months from the date of purchase."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-purple-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-purple-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
