@@ -10,27 +10,27 @@ export default function ServicesPage() {
   const services = [
     {
       icon: <FaFolderOpen className="text-3xl text-purple-600 mb-4" />,
-      title: 'Administrative Support',
+      title: 'Executive Administration',
       example: {
-        title: "The Calendar Chaos",
-        description: "I spend 2 hours every Monday just scheduling meetings and responding to calendar invites. My inbox is a mess, and I'm constantly double-booking myself.",
+        title: "The Executive Challenge",
+        description: "As a busy executive, I'm struggling to maintain an organized workflow while managing multiple priorities and deadlines.",
         solutions: [
-          "Manage your calendar and schedule meetings",
-          "Coordinate with multiple time zones",
-          "Send meeting reminders and follow-ups"
+          "Streamline executive communications",
+          "Manage complex scheduling and priorities",
+          "Coordinate high-level meetings and events"
         ]
       }
     },
     {
       icon: <FaFileAlt className="text-3xl text-purple-600 mb-4" />,
-      title: 'Data & Research',
+      title: 'Board Support',
       example: {
-        title: "The Research Rabbit Hole",
-        description: "I need to find the best venue for our annual conference, but I'm spending hours comparing options, reading reviews, and trying to coordinate with different time zones.",
+        title: "The Board Meeting Preparation",
+        description: "Preparing for board meetings is time-consuming, and ensuring all materials are properly organized and distributed is a constant challenge.",
         solutions: [
-          "Comprehensive venue research and comparison",
-          "Detailed cost analysis and budget tracking",
-          "Time zone coordination and scheduling assistance"
+          "Prepare and distribute board materials",
+          "Coordinate board meeting logistics",
+          "Maintain board documentation and records"
         ]
       }
     },
@@ -38,51 +38,51 @@ export default function ServicesPage() {
       icon: <FaUserTie className="text-3xl text-purple-600 mb-4" />,
       title: 'Personal Assistant',
       example: {
-        title: "The Travel Tangle",
-        description: "I need to book flights, hotels, and transfers for my team's quarterly meeting, but I'm drowning in options and don't have time to compare prices.",
+        title: "The Executive Lifestyle",
+        description: "Balancing professional and personal commitments while maintaining efficiency in both areas is becoming increasingly difficult.",
         solutions: [
-          "Research and book travel arrangements",
-          "Create detailed travel itineraries",
-          "Handle travel changes and emergencies"
-        ]
-      }
-    },
-    {
-      icon: <FaComments className="text-3xl text-purple-600 mb-4" />,
-      title: 'Social Media Management',
-      example: {
-        title: "The Content Crunch",
-        description: "My social media presence is inconsistent because I can't keep up with creating and scheduling content while running my business.",
-        solutions: [
-          "Create engaging content calendar",
-          "Schedule posts across platforms",
-          "Monitor and engage with audience"
+          "Manage personal and professional schedules",
+          "Coordinate travel and accommodations",
+          "Handle personal errands and appointments"
         ]
       }
     },
     {
       icon: <FaProjectDiagram className="text-3xl text-purple-600 mb-4" />,
-      title: 'Project Management',
+      title: 'Operations Management',
       example: {
-        title: "The Project Puzzle",
-        description: "We're implementing a new CRM system, but the project is falling behind schedule and team members are confused about their responsibilities.",
+        title: "The Operational Efficiency",
+        description: "Our business processes need streamlining, and we need better coordination between departments to improve overall efficiency.",
         solutions: [
-          "Create clear project timelines",
-          "Coordinate team communications",
-          "Track progress and milestones"
+          "Optimize business processes",
+          "Implement efficient workflows",
+          "Coordinate cross-departmental projects"
         ]
       }
     },
     {
       icon: <FaChartBar className="text-3xl text-purple-600 mb-4" />,
-      title: 'Customer Support',
+      title: 'Event Management',
       example: {
-        title: "The Inbox Overload",
-        description: "Customer inquiries are piling up in my inbox, and I'm struggling to respond quickly while maintaining quality service.",
+        title: "The Event Coordination",
+        description: "Planning and executing corporate events requires attention to countless details while ensuring everything runs smoothly.",
         solutions: [
-          "Timely response to customer inquiries",
-          "Maintain consistent communication",
-          "Track and follow up on issues"
+          "Plan and coordinate corporate events",
+          "Manage vendor relationships",
+          "Handle event logistics and execution"
+        ]
+      }
+    },
+    {
+      icon: <FaComments className="text-3xl text-purple-600 mb-4" />,
+      title: 'Bespoke Support',
+      example: {
+        title: "Custom Solutions",
+        description: "If you need something not on this list, let's discuss your requirements in a free consultation call.",
+        solutions: [
+          "Tailored solutions for your needs",
+          "Flexible service packages",
+          "Personalized support approach"
         ]
       }
     },
