@@ -124,10 +124,8 @@ export default function ServicesPage() {
                   className={`bg-purple-50 rounded-lg p-4 border transition-colors cursor-pointer ${
                     activeIdx === idx ? 'border-purple-400 shadow-md' : 'border-purple-100 hover:border-purple-300'
                   }`}
-                  onMouseEnter={() => setActiveIdx(idx)}
-                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => setActiveIdx(idx)}
                   onFocus={() => setActiveIdx(idx)}
-                  onBlur={() => setActiveIdx(null)}
                   tabIndex={0}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: 'spring', stiffness: 300 }}
@@ -185,7 +183,7 @@ export default function ServicesPage() {
                   exit={{ opacity: 0 }}
                   className="text-center text-gray-500 py-12"
                 >
-                  <p className="text-lg">Hover over a service to see how we can help</p>
+                  <p className="text-lg">Click on a service to see how we can help</p>
                 </motion.div>
               )}
             </AnimatePresence>
