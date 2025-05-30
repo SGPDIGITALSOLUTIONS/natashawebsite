@@ -11,12 +11,6 @@ export default function ServicesPage() {
     {
       icon: <FaFolderOpen className="text-3xl text-purple-600 mb-4" />,
       title: 'Administrative Support',
-      items: [
-        'Email Management',
-        'Newsletter Distribution',
-        'Meeting/Event Preparation',
-        'Meeting Minutes',
-      ],
       example: {
         title: "The Calendar Chaos",
         description: "I spend 2 hours every Monday just scheduling meetings and responding to calendar invites. My inbox is a mess, and I'm constantly double-booking myself.",
@@ -30,15 +24,6 @@ export default function ServicesPage() {
     {
       icon: <FaFileAlt className="text-3xl text-purple-600 mb-4" />,
       title: 'Data & Research',
-      items: [
-        'Data Entry',
-        'Document Templates',
-        'Document Standardisation',
-        'Data/Document Checking',
-        'Event Research',
-        'Travel Research',
-        'Business Research',
-      ],
       example: {
         title: "The Research Rabbit Hole",
         description: "I need to find the best venue for our annual conference, but I'm spending hours comparing options, reading reviews, and trying to coordinate with different time zones.",
@@ -52,15 +37,6 @@ export default function ServicesPage() {
     {
       icon: <FaUserTie className="text-3xl text-purple-600 mb-4" />,
       title: 'Personal Assistant',
-      items: [
-        'Travel/Holiday plans',
-        'Reminder Services',
-        'Diary Management',
-        'Email Management',
-        'Event Management',
-        'Meeting Preparation',
-        'Appointment Making',
-      ],
       example: {
         title: "The Travel Tangle",
         description: "I need to book flights, hotels, and transfers for my team's quarterly meeting, but I'm drowning in options and don't have time to compare prices.",
@@ -74,12 +50,6 @@ export default function ServicesPage() {
     {
       icon: <FaComments className="text-3xl text-purple-600 mb-4" />,
       title: 'Social Media Management',
-      items: [
-        'Facebook Community Manager',
-        'Content Creation',
-        'Content Scheduling',
-        'Content Planning',
-      ],
       example: {
         title: "The Content Crunch",
         description: "My social media presence is inconsistent because I can't keep up with creating and scheduling content while running my business.",
@@ -93,11 +63,6 @@ export default function ServicesPage() {
     {
       icon: <FaProjectDiagram className="text-3xl text-purple-600 mb-4" />,
       title: 'Project Management',
-      items: [
-        'New system implementation',
-        'Accountability Sessions',
-        'Process Improvement',
-      ],
       example: {
         title: "The Project Puzzle",
         description: "We're implementing a new CRM system, but the project is falling behind schedule and team members are confused about their responsibilities.",
@@ -111,9 +76,6 @@ export default function ServicesPage() {
     {
       icon: <FaChartBar className="text-3xl text-purple-600 mb-4" />,
       title: 'Customer Support',
-      items: [
-        'Responding to client emails',
-      ],
       example: {
         title: "The Inbox Overload",
         description: "Customer inquiries are piling up in my inbox, and I'm struggling to respond quickly while maintaining quality service.",
@@ -166,19 +128,9 @@ export default function ServicesPage() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="text-purple-600 mt-1">{service.icon}</div>
-                    <div>
-                      <h3 className="font-semibold text-purple-900 mb-2">{service.title}</h3>
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        {service.items.map((item) => (
-                          <li key={item} className="flex items-center">
-                            <span className="text-purple-600 mr-2">•</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="flex items-center gap-3">
+                    <div className="text-purple-600">{service.icon}</div>
+                    <h3 className="font-semibold text-purple-900">{service.title}</h3>
                   </div>
                 </motion.div>
               ))}
