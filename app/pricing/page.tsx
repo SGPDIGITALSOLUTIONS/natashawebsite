@@ -322,7 +322,78 @@ export default function PricingPage() {
       {/* Pricing Options */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* On-Demand Option */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+            >
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">On-Demand Support</h3>
+                
+                <div className="mb-6">
+                  <label htmlFor="paygo-hours" className="block text-sm font-medium text-gray-700 mb-1">
+                    Estimate hours needed:
+                  </label>
+                  <select 
+                    id="paygo-hours"
+                    value={paygoHours}
+                    onChange={(e) => setPaygoHours(Number(e.target.value))}
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  >
+                    {[...Array(38)].map((_, i) => (
+                      <option key={i + 3} value={i + 3}>{i + 3} hours</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div className="flex items-baseline mb-6">
+                  <span className="text-4xl font-extrabold text-gray-900">£{calculatePaygoPrice()}</span>
+                  <span className="text-gray-600 ml-2">total</span>
+                </div>
+                <p className="text-gray-600 mb-8">
+                  Flexible support available when you need it. Perfect for one-off projects or occasional assistance.
+                </p>
+                <div className="bg-blue-50 p-3 rounded-lg mb-6 text-sm text-blue-800">
+                  <span className="font-bold">First-time client?</span> Check out our special offer on the Dedicated Support Plan to save 20% on your first month.
+                </div>
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>£{paygoRate} per hour</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>No monthly commitment</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>3-hour minimum purchase</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Hours valid for 3 months</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Available as needed</span>
+                  </li>
+                  <li className="flex items-start">
+                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
+                    <span>Standard response time</span>
+                  </li>
+                </ul>
+                <Link 
+                  href="/contact" 
+                  className="block w-full py-3 px-4 rounded-lg text-center font-medium bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </motion.div>
+
             {/* Retainer Option */}
             <motion.div
               id="dedicated-plan"
@@ -405,74 +476,30 @@ export default function PricingPage() {
               </div>
             </motion.div>
 
-            {/* Pay As You Go Option */}
+            {/* Project Based Support */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
             >
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">On-Demand Support</h3>
-                
-                <div className="mb-6">
-                  <label htmlFor="paygo-hours" className="block text-sm font-medium text-gray-700 mb-1">
-                    Estimate hours needed:
-                  </label>
-                  <select 
-                    id="paygo-hours"
-                    value={paygoHours}
-                    onChange={(e) => setPaygoHours(Number(e.target.value))}
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                  >
-                    {[...Array(40)].map((_, i) => (
-                      <option key={i + 1} value={i + 1}>{i + 1} hours</option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div className="flex items-baseline mb-6">
-                  <span className="text-4xl font-extrabold text-gray-900">£{calculatePaygoPrice()}</span>
-                  <span className="text-gray-600 ml-2">total</span>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Project Based Support</h3>
                 <p className="text-gray-600 mb-8">
-                  Flexible support available when you need it. Perfect for one-off projects or occasional assistance.
+                  Have a specific project in mind? Let's discuss your requirements and create a custom solution tailored to your needs.
                 </p>
-                <div className="bg-blue-50 p-3 rounded-lg mb-6 text-sm text-blue-800">
-                  <span className="font-bold">First-time client?</span> Check out our special offer on the Dedicated Support Plan to save 20% on your first month.
+                <div className="bg-purple-50 p-6 rounded-lg mb-8">
+                  <h4 className="text-lg font-semibold text-purple-900 mb-4">Book a Free Consultation</h4>
+                  <p className="text-gray-600 mb-6">
+                    Schedule a 30-minute call to discuss your project requirements and get a custom quote.
+                  </p>
+                  <Link 
+                    href="/contact" 
+                    className="block w-full py-3 px-4 rounded-lg text-center font-medium bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+                  >
+                    Book Free Call
+                  </Link>
                 </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>£{paygoRate} per hour</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>No monthly commitment</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>5-hour minimum purchase</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>Hours valid for 3 months</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>Available as needed</span>
-                  </li>
-                  <li className="flex items-start">
-                    <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                    <span>Standard response time</span>
-                  </li>
-                </ul>
-                <Link 
-                  href="/contact" 
-                  className="block w-full py-3 px-4 rounded-lg text-center font-medium bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors"
-                >
-                  Get Started
-                </Link>
               </div>
             </motion.div>
           </div>
