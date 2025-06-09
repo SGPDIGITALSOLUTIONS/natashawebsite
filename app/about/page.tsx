@@ -1,21 +1,23 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaUserTie, FaHandsHelping, FaSmile, FaHeart, FaLightbulb } from 'react-icons/fa';
+import { FaUserTie, FaHandsHelping, FaSmile, FaHeart, FaLightbulb, FaCheck, FaGlobe, FaCalendarAlt, FaEnvelope, FaTools, FaTasks } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+
+const services = [
+  { icon: <FaCalendarAlt className="text-purple-600 text-xl" />, label: 'Inbox and diary management' },
+  { icon: <FaGlobe className="text-purple-600 text-xl" />, label: 'Event and travel planning' },
+  { icon: <FaEnvelope className="text-purple-600 text-xl" />, label: 'Client communications and CRM' },
+  { icon: <FaTasks className="text-purple-600 text-xl" />, label: 'Project coordination' },
+  { icon: <FaTools className="text-purple-600 text-xl" />, label: 'Process improvement' },
+];
 
 const clientTypes = [
   { icon: <FaUserTie className="text-purple-600 text-2xl mb-2" />, label: 'Small Charities' },
   { icon: <FaHandsHelping className="text-purple-600 text-2xl mb-2" />, label: 'Solopreneurs' },
-  { icon: <FaSmile className="text-purple-600 text-2xl mb-2" />, label: 'Women-led Businesses' },
+  { icon: <FaSmile className="text-purple-600 text-2xl mb-2" />, label: 'Purpose-Driven Businesses' },
   { icon: <FaLightbulb className="text-purple-600 text-2xl mb-2" />, label: 'Health & Wellness' },
-  { icon: <FaHeart className="text-purple-600 text-2xl mb-2" />, label: 'Mission-driven' },
-];
-
-const values = [
-  { icon: <FaSmile className="text-purple-600 text-xl mr-2" />, title: 'Experienced', desc: '25+ years in admin and customer service.' },
-  { icon: <FaHandsHelping className="text-purple-600 text-xl mr-2" />, title: 'Dedicated', desc: 'I become part of your team and mission.' },
-  { icon: <FaLightbulb className="text-purple-600 text-xl mr-2" />, title: 'Tailored', desc: 'Unique solutions for your unique needs.' },
+  { icon: <FaHeart className="text-purple-600 text-2xl mb-2" />, label: 'Mission-Driven Organizations' },
 ];
 
 export default function AboutPage() {
@@ -34,9 +36,9 @@ export default function AboutPage() {
               priority
             />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-2">Meet Natasha</h1>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-4">
-            Hi, I'm Natasha – the heart and hands behind Hudson Virtual Business Services (also affectionately known as your Admin Unicorn).
+          <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">Meet Natasha – Your Admin Unicorn</h1>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Running a small business or charity is no small feat. You're spinning plates, juggling priorities, and wondering if you ever replied to that email from last week—or was it the week before?
           </p>
         </motion.div>
       </section>
@@ -44,79 +46,109 @@ export default function AboutPage() {
       {/* Main Content */}
       <section className="max-w-4xl mx-auto px-4 py-12">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white rounded-xl shadow-lg p-8 mb-12">
-          <p className="text-gray-700 mb-6">
-            With over 25 years of experience in admin and customer service, I've worked across retail, travel, and research—helping businesses stay organised, on track, and thriving. Now, as a virtual assistant, I specialise in supporting small charities, solopreneurs, and women-led businesses, especially those in the health and wellness space. My sweet spot? Working with people who care deeply about their work but are drowning in the admin that comes with it.
-          </p>
-          <p className="text-gray-700 mb-6">
-            I'm not your typical VA. I bring more than just efficiency—I bring energy, insight, and heart. I invest in the businesses I support. When we work together, I don't just tick tasks off your to-do list—I become part of your team, someone who understands your mission and helps you bring it to life.
-          </p>
-          <p className="text-gray-700">
-            My clients often tell me I bring calm to their chaos, and that I just "get it"—how their business works, what they need, and how to keep things flowing. I thrive on trust, communication, and a shared commitment to making your business stronger and more sustainable.
-          </p>
-        </motion.div>
+          <div className="mb-8">
+            <p className="text-gray-700 mb-6">
+              I'm Natasha, founder of Hudson Virtual Business Services, and I'm here to help you find space to breathe. I offer calm, practical virtual assistant support to small businesses and charities that are doing brilliant work but need someone dependable behind the scenes to keep things running smoothly.
+            </p>
+            <p className="text-gray-700 mb-6">
+              I'm not your typical VA. There's no corporate gloss, no fancy jargon. What you get is a real human—friendly, focused, and fully in your corner.
+            </p>
+            
+            <h2 className="text-2xl font-bold text-purple-900 mt-12 mb-4">My Journey (aka: How I Became the Admin Unicorn)</h2>
+            <p className="text-gray-700 mb-6">
+              My background is as varied as a charity's inbox on a Monday morning. I've worked across industries including scientific research and travel—fields where being organised, adaptable, and people-focused isn't just helpful, it's essential.
+            </p>
+            <p className="text-gray-700 mb-6">
+              Over the years, I've supported teams and leaders to stay on track and thrive. Somewhere along the way, I realised I could take everything I'd learned and channel it into something of my own.
+            </p>
+            <p className="text-gray-700 mb-6">
+              That's how Hudson Virtual was born. After years of helping other people shine, I wanted to build a business that supports the kind of work I believe in—purpose-driven, people-first small businesses and charities doing good in the world.
+            </p>
+          </div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-purple-50 rounded-xl shadow-lg p-8 mb-12">
-          <h2 className="text-2xl font-bold text-purple-900 mb-4">A Bit of Unicorn Magic</h2>
-          <p className="text-gray-700">
-            Why Admin Unicorn? Because I'm all about unique, tailored support. No cookie-cutter solutions here. I blend practicality with a sprinkle of creativity and a good dose of care. It's not just business—it's personal, in the best way.
-          </p>
+          <div className="border-t border-purple-100 pt-8">
+            <h2 className="text-2xl font-bold text-purple-900 mb-6">What I Do Best</h2>
+            <p className="text-gray-700 mb-6">
+              I'm here to help you breathe a little easier—by taking the busywork off your plate so you can focus on the bigger picture. From inboxes to itineraries, newsletters to nurture sequences, I offer hands-on support across a wide range of admin and operational needs.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {services.map((service, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  {service.icon}
+                  <span className="text-gray-700">{service.label}</span>
+                </div>
+              ))}
+            </div>
+            
+            <p className="text-gray-700 italic">
+              And if it's not on the list? Just ask. There's not much I won't roll up my sleeves for.
+            </p>
+          </div>
+
+          <div className="border-t border-purple-100 pt-8 mt-8">
+            <h2 className="text-2xl font-bold text-purple-900 mb-6">A Bit About Me</h2>
+            <p className="text-gray-700 mb-6">
+              Born and raised in Canada (and yes, "sorry" is still one of my most-used words), I now live in the UK with my two teenage daughters, two mischievous cats named Chilli and Pepper, and a delightfully chaotic Dalmatian-Boxer-Lab cross called Clover—who thinks she's the third child.
+            </p>
+            <p className="text-gray-700 mb-6">
+              I've been lucky enough to visit all seven continents—yep, even Antarctica. It turns out penguins are great travel companions.
+            </p>
+            <p className="text-gray-700">
+              When I'm not colour-coding a calendar or fine-tuning a process, you'll find me exploring new places, planning the next adventure, or hunting down the best snacks for a movie night with my girls.
+            </p>
+          </div>
         </motion.div>
       </section>
 
-      {/* Client Types Row */}
+      {/* Values and Client Types Section */}
       <section className="max-w-4xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-semibold text-purple-800 mb-6 text-center">Who I Work With</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 justify-items-center">
-          {clientTypes.map((client) => (
-            <motion.div
-              key={client.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white rounded-xl shadow p-4 flex flex-col items-center w-full"
-            >
-              {client.icon}
-              <span className="text-gray-700 font-medium text-sm text-center">{client.label}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+        <div className="bg-white rounded-xl shadow-lg p-8">
+          <h2 className="text-2xl font-semibold text-purple-800 mb-8 text-center">Why Work With Me?</h2>
+          
+          <div className="mb-12">
+            <p className="text-gray-700 mb-6 text-center">
+              Because I care about your mission—and I care about you. When we work together, you're not just hiring help; you're gaining someone who listens, adapts, and steps up exactly where you need them.
+            </p>
+            <p className="text-gray-700 text-center">
+              I thrive on building genuine relationships, understanding your goals, and bringing a steady presence that lets you focus on what you do best.
+            </p>
+          </div>
 
-      {/* Testimonial Section */}
-      <section className="max-w-xl mx-auto px-4 py-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-purple-50 rounded-xl shadow p-8 text-center">
-          <h3 className="text-xl font-semibold text-purple-800 mb-4">What My Clients Say</h3>
-          <blockquote className="italic text-gray-700 mb-2">“I was so grateful for Natasha's help. She was really organised and efficient with all of the tasks assigned to her.”</blockquote>
-          <div className="text-gray-600 font-medium">— Ella K., London</div>
-        </motion.div>
-      </section>
-
-      {/* How I Work / Values Section */}
-      <section className="max-w-3xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-semibold text-purple-800 mb-6 text-center">How I Work</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {values.map((val) => (
-            <motion.div
-              key={val.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center"
-            >
-              <div>{val.icon}</div>
-              <h4 className="text-lg font-bold text-purple-900 mt-2 mb-1">{val.title}</h4>
-              <p className="text-gray-600 text-sm">{val.desc}</p>
-            </motion.div>
-          ))}
+          <div className="border-t border-purple-100 pt-8">
+            <h3 className="text-xl font-semibold text-purple-800 mb-6 text-center">I Specialize In Supporting</h3>
+            <div className="flex flex-wrap justify-center gap-6">
+              {clientTypes.map((client) => (
+                <div
+                  key={client.label}
+                  className="flex items-center"
+                >
+                  <div className="mr-2">{client.icon}</div>
+                  <span className="text-gray-700">{client.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Call to Action Section */}
       <section className="text-center mt-16">
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">Let's Start Working Together!</motion.h2>
-        <Link href="/contact" className="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors shadow">
-          Contact Me
-        </Link>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">Let's Talk</h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+            If you're overwhelmed, overstretched, or simply ready to get some brainspace back—let's talk.
+            No pressure. Just a genuine conversation to see if I'm the right fit for you and your business.
+          </p>
+          <div className="space-x-4">
+            <Link href="/contact" className="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors shadow">
+              Book a Discovery Call
+            </Link>
+            <Link href="/contact" className="inline-block bg-white text-purple-600 border-2 border-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors">
+              Get in Touch
+            </Link>
+          </div>
+        </motion.div>
       </section>
     </main>
   );
