@@ -15,16 +15,16 @@ export default function PricingPage() {
   
   // Pricing calculations
   const retainerRates = {
-    10: 280,   // 10 hours * £28
-    15: 420,   // 15 hours * £28
-    20: 560,   // 20 hours * £28
-    25: 700,   // 25 hours * £28
-    30: 840,   // 30 hours * £28
-    35: 980,   // 35 hours * £28
-    40: 1120   // 40 hours * £28
+    10: 300,   // 10 hours * £30
+    15: 450,   // 15 hours * £30
+    20: 600,   // 20 hours * £30
+    25: 750,   // 25 hours * £30
+    30: 900,   // 30 hours * £30
+    35: 1050,  // 35 hours * £30
+    40: 1200   // 40 hours * £30
   };
   
-  const paygoRate = 30; // £ per hour
+  const paygoRate = 35; // £ per hour
   
   const calculateRetainerPrice = () => {
     return retainerRates[retainerHours] || 0;
@@ -356,9 +356,7 @@ export default function PricingPage() {
                 <p className="text-gray-600 mb-8">
                   Flexible support available when you need it. Perfect for one-off projects or occasional assistance.
                 </p>
-                <div className="bg-blue-50 p-3 rounded-lg mb-6 text-sm text-blue-800">
-                  <span className="font-bold">First-time client?</span> Check out our special offer on the Dedicated Support Plan to save 20% on your first month.
-                </div>
+
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start">
                     <FaCheck className="text-purple-600 mr-3 mt-1 flex-shrink-0" />
@@ -405,9 +403,7 @@ export default function PricingPage() {
               <div className="bg-purple-600 text-white py-2 text-center font-medium">
                 Most Popular
               </div>
-              <div className="absolute -right-8 top-20 transform rotate-45 bg-yellow-500 text-white py-1 px-10 shadow-lg font-medium text-sm">
-                20% OFF FIRST MONTH
-              </div>
+
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Dedicated Support Plan</h3>
                 
@@ -435,9 +431,7 @@ export default function PricingPage() {
                   <span className="text-4xl font-extrabold text-gray-900">£{calculateRetainerPrice()}</span>
                   <span className="text-gray-600 ml-2">/month</span>
                 </div>
-                <div className="bg-yellow-100 p-3 rounded-lg mb-6 text-sm text-yellow-800 font-medium">
-                  <span className="font-bold">Special Offer:</span> 20% off your first month when you sign up for a 3-month commitment.
-                </div>
+
                 <p className="text-gray-600 mb-8">
                   Secure dedicated support hours each month for consistent assistance with your business tasks.
                 </p>
@@ -546,20 +540,7 @@ export default function PricingPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-purple-900 mb-12">What's Included</h2>
           
-          <div className="bg-gradient-to-r from-purple-600 to-pink-500 text-white p-6 rounded-xl shadow-lg mb-12">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="mb-4 md:mb-0">
-                <h3 className="text-2xl font-bold mb-2">Limited Time Offer!</h3>
-                <p className="text-lg">New clients receive 20% off their first month on any Dedicated Support Plan</p>
-              </div>
-              <Link 
-                href="/contact" 
-                className="bg-white text-purple-700 py-3 px-6 rounded-lg font-semibold hover:bg-purple-50 transition-colors shadow-lg whitespace-nowrap"
-              >
-                Get Started Today
-              </Link>
-            </div>
-          </div>
+
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-md">
