@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-blue-50 via-purple-50 to-white min-h-screen">
+      <body className="bg-white min-h-screen">
         <Navbar />
         <main className="pt-40 min-h-[80vh]">{children}</main>
         <Footer />

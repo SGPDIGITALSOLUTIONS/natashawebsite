@@ -7,45 +7,83 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-white">
-      {/* Hero Section */}
-      <section className="w-full pt-8 pb-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-4 gap-8">
-          {/* Left: Headline, Subheadline, CTAs */}
-          <div className="flex flex-col items-start">
-            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-purple-900 mb-2 leading-tight">
+    <main className="min-h-screen">
+      {/* Hero Section - Dark Purple */}
+      <section className="w-full bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center px-6 py-20 gap-12 min-h-[80vh]">
+          
+          {/* Left: Text Content */}
+          <div className="flex flex-col justify-center">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+            >
               Put your business on autopilot<br />with expert virtual support
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-4">
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg md:text-xl text-purple-100 mb-8 leading-relaxed"
+            >
               Free up your time and multiply your impact. We handle the admin, you focus on growth.
-            </p>
-            <div className="flex gap-4 mb-0">
-              <Link href="/contact" className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex gap-4"
+            >
+              <Link 
+                href="/contact" 
+                className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
                 Book a Free Call
               </Link>
-              <Link href="/pricing" className="bg-white border border-purple-600 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors">
+              <Link 
+                href="/pricing" 
+                className="bg-white/10 border border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm"
+              >
                 See Pricing
               </Link>
-            </div>
+            </motion.div>
           </div>
-          {/* Right: Profile Image only, vertically centered */}
-          <div className="flex justify-center items-center w-full md:w-auto h-full">
-            <div className="relative w-[22rem] h-[22rem] md:w-[26rem] md:h-[26rem] rounded-full bg-gradient-to-tr from-purple-100 to-blue-100 flex items-center justify-center shadow-2xl overflow-hidden">
-              <Image
-                src="/logo.jpg"
-                alt="Hudson Virtual Logo"
-                width={340}
-                height={340}
-                className="rounded-full object-cover"
-                priority
-              />
-            </div>
+          
+          {/* Right: Square Photo */}
+          <div className="flex justify-center lg:justify-end">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-600 to-pink-600 p-1">
+                <div className="w-full h-full rounded-xl overflow-hidden">
+                  <Image
+                    src="/logo.jpg"
+                    alt="Natasha Hudson"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-pink-400 rounded-full opacity-60"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full opacity-60"></div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Value Proposition Section (no heading, with purple divider) */}
-      <section className="py-20 bg-purple-50 px-4">
+      {/* Value Proposition Section */}
+      <section className="py-20 bg-gray-50 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
