@@ -1,0 +1,12 @@
+*.md
+*.log
+.vscode/
+node_modules/
+test/
+tests/
+coverage/
+*.test.*
+*.spec.*
+.env.local
+.env.development
+v.1/ 
