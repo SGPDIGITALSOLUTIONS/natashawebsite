@@ -457,6 +457,7 @@ export default function PricingPage() {
                     <span>Dedicated assistant</span>
                   </li>
                 </ul>
+
                 <Link 
                   href="/contact" 
                   className="block w-full py-3 px-4 rounded-lg text-center font-medium bg-brand-yellow text-brand-navy hover:bg-yellow-400 transition-colors"
@@ -513,6 +514,135 @@ export default function PricingPage() {
                   </Link>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Solutions & Strategic Support */}
+      <section className="py-16 bg-white px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-navy mb-4">Quick Solutions & Strategic Support</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Need something more focused? These targeted services help you tackle specific challenges or gain clarity fast.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Power Sessions Column */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-8 border border-cyan-200"
+            >
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-yellow-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-brand-navy">Power Sessions</h3>
+              </div>
+              
+              <p className="text-gray-600 mb-8">
+                Quick, focused support to get you unstuck or supercharge your ideas.
+              </p>
+              
+              <div className="space-y-6">
+                {/* Power Hour */}
+                <div className="bg-white p-6 rounded-lg border border-cyan-100">
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-lg font-semibold text-brand-navy">Power Hour</h4>
+                    <span className="text-2xl font-bold text-brand-purple">£40</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    One focused hour to clarify a problem or make progress fast.
+                  </p>
+                </div>
+                
+                {/* Brainstorm Intensive */}
+                <div className="bg-white p-6 rounded-lg border border-cyan-100">
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-lg font-semibold text-brand-navy">Brainstorm Intensive</h4>
+                    <span className="text-2xl font-bold text-brand-purple">£150</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    A 3-hour creative workshop to explore opportunities and map next steps.
+                  </p>
+                </div>
+              </div>
+              
+              <Link 
+                href="/contact" 
+                className="block w-full mt-8 py-3 px-6 rounded-lg text-center font-medium bg-yellow-400 text-yellow-900 hover:bg-yellow-500 transition-colors"
+              >
+                Book a Power Session
+              </Link>
+            </motion.div>
+
+            {/* Process Audits Column */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border border-purple-200"
+            >
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-brand-purple rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-brand-navy">Process Audits</h3>
+              </div>
+              
+              <p className="text-gray-600 mb-8">
+                Uncover hidden gaps, opportunities, and practical improvements in your business processes.
+              </p>
+              
+              <div className="space-y-6">
+                {/* Audit Review */}
+                <div className="bg-white p-6 rounded-lg border border-purple-100">
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-lg font-semibold text-brand-navy">Audit Review</h4>
+                    <span className="text-2xl font-bold text-brand-purple">£95</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    You complete my structured audit form, I review it, and provide written recommendations.
+                  </p>
+                </div>
+                
+                {/* Audit + Strategy Call */}
+                <div className="bg-white p-6 rounded-lg border border-purple-100">
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-lg font-semibold text-brand-navy">Audit + Strategy Call</h4>
+                    <span className="text-2xl font-bold text-brand-purple">£135</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Includes the audit review plus a 1-hour call to dive deeper into solutions.
+                  </p>
+                </div>
+                
+                {/* Full Implementation Package */}
+                <div className="bg-white p-6 rounded-lg border border-purple-100">
+                  <div className="flex justify-between items-start mb-3">
+                    <h4 className="text-lg font-semibold text-brand-navy">Audit + Report + Implementation</h4>
+                    <span className="text-2xl font-bold text-brand-purple">£225</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Includes audit review, full written report, a 1-hour follow-up call, and 2 hours of implementation support.
+                  </p>
+                </div>
+              </div>
+              
+              <Link 
+                href="/contact" 
+                className="block w-full mt-8 py-3 px-6 rounded-lg text-center font-medium bg-brand-purple text-white hover:bg-purple-700 transition-colors"
+              >
+                Start Process Audit
+              </Link>
             </motion.div>
           </div>
         </div>

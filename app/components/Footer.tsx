@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaEnvelope, FaPhone, FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,12 +23,6 @@ export default function Footer() {
                   <FaEnvelope className="text-sm" />
                   <a href="mailto:hello@hudsonvirtual.co.uk" className="hover:text-white transition-colors">
                     hello@hudsonvirtual.co.uk
-                  </a>
-                </div>
-                <div className="flex items-center gap-2 text-purple-200">
-                  <FaPhone className="text-sm" />
-                  <a href="tel:+447123456789" className="hover:text-white transition-colors">
-                    +44 7123 456789
                   </a>
                 </div>
               </div>
@@ -112,9 +106,9 @@ export default function Footer() {
 
           </div>
 
-          {/* Social Media & Newsletter */}
+          {/* Social Media */}
           <div className="border-t border-purple-800 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex justify-center items-center">
               
               {/* Social Media Links */}
               <div className="flex items-center gap-4">
@@ -130,16 +124,7 @@ export default function Footer() {
                     <FaLinkedin className="text-lg" />
                   </a>
                   <a 
-                    href="https://twitter.com/hudsonvirtual" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-purple-200 hover:text-brand-navy transition-colors p-2 hover:bg-brand-yellow rounded-full"
-                    aria-label="Twitter"
-                  >
-                    <FaTwitter className="text-lg" />
-                  </a>
-                  <a 
-                    href="https://facebook.com/hudsonvirtual" 
+                    href="https://www.facebook.com/share/1EYU3NwUBt/?mibextid=wwXIfr" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-purple-200 hover:text-brand-navy transition-colors p-2 hover:bg-brand-yellow rounded-full"
@@ -148,7 +133,16 @@ export default function Footer() {
                     <FaFacebook className="text-lg" />
                   </a>
                   <a 
-                    href="https://instagram.com/hudsonvirtual" 
+                    href="https://wa.me/7967661613" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-purple-200 hover:text-brand-navy transition-colors p-2 hover:bg-brand-yellow rounded-full"
+                    aria-label="WhatsApp"
+                  >
+                    <FaWhatsapp className="text-lg" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/hudsonvirtualuk?igsh=OGVsNnBqM2Q5aTM=10" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-purple-200 hover:text-brand-navy transition-colors p-2 hover:bg-brand-yellow rounded-full"
@@ -156,21 +150,6 @@ export default function Footer() {
                   >
                     <FaInstagram className="text-lg" />
                   </a>
-                </div>
-              </div>
-
-              {/* Newsletter Signup */}
-              <div className="flex flex-col md:flex-row items-center gap-4">
-                <span className="text-purple-200 text-sm whitespace-nowrap">Stay updated:</span>
-                <div className="flex gap-2">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email"
-                    className="px-4 py-2 rounded-lg bg-brand-purple text-white placeholder-cyan-300 border border-brand-cyan focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow text-sm"
-                  />
-                  <button className="px-4 py-2 bg-brand-yellow hover:bg-brand-navy text-brand-navy hover:text-white rounded-lg transition-colors text-sm font-medium">
-                    Subscribe
-                  </button>
                 </div>
               </div>
 

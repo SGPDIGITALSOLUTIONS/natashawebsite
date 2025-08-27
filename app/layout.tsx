@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import CookieBanner from './components/CookieBanner'
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navbar />
         <main className="pt-40 min-h-[80vh]">{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   )
