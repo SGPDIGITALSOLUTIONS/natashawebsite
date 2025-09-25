@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaEnvelope, FaPhone, FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -128,16 +128,7 @@ export default function Footer() {
                     <FaLinkedin className="text-lg" />
                   </a>
                   <a 
-                    href="https://twitter.com/hudsonvirtual" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-purple-200 hover:text-white transition-colors p-2 hover:bg-purple-800 rounded-full"
-                    aria-label="Twitter"
-                  >
-                    <FaTwitter className="text-lg" />
-                  </a>
-                  <a 
-                    href="https://facebook.com/hudsonvirtual" 
+                    href="https://facebook.com/hudsonvirtualuk" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-purple-200 hover:text-white transition-colors p-2 hover:bg-purple-800 rounded-full"
@@ -146,7 +137,7 @@ export default function Footer() {
                     <FaFacebook className="text-lg" />
                   </a>
                   <a 
-                    href="https://instagram.com/hudsonvirtual" 
+                    href="https://instagram.com/hudsonvirtualuk" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-purple-200 hover:text-white transition-colors p-2 hover:bg-purple-800 rounded-full"

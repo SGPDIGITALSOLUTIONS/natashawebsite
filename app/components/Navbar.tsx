@@ -40,12 +40,10 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://outlook.office365.com/bookwithme/user/your-bookings-link"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="ml-4 bg-purple-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md transition-colors duration-200 hover:bg-purple-800 hover:ring-2 hover:ring-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
           >
-            Book a Free Call
+            Get Started
           </a>
         </div>
         {/* Mobile Hamburger */}

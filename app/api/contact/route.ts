@@ -7,11 +7,11 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.EMAIL_USER, // Using environment variable
-    pass: process.env.EMAIL_PASSWORD // Using environment variable
+    user: process.env.EMAIL_USER || '', // Using environment variable
+    pass: process.env.EMAIL_PASSWORD || '' // Using environment variable
   },
   tls: {
-    ciphers: 'SSLv3'
+    rejectUnauthorized: false
   }
 });
 
@@ -34,6 +34,15 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'Invalid email format' },
         { status: 400 }
+      );
+    }
+
+    // Skip email sending if credentials are not set
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      console.log('Email credentials not configured, skipping email send');
+      return NextResponse.json(
+        { message: 'Form submitted successfully (email not configured)' },
+        { status: 200 }
       );
     }
 

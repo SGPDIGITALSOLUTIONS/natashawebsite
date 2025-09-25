@@ -10,37 +10,37 @@ export default function TestimonialsPage() {
       quote: "Hudson Virtual transformed our administrative processes, allowing us to focus more on our community work. Their support in grant applications has been invaluable.",
       name: "Sarah M.",
       title: "Charity Director",
-      image: "/assets/testimonial1.jpg"
+      image: "/logo.jpg"
     },
     {
       quote: "Having Hudson Virtual manage my calendar and emails has given me back hours each week. Their attention to detail and proactive approach is outstanding.",
       name: "James T.",
       title: "Business Owner",
-      image: "/assets/testimonial2.jpg"
+      image: "/logo.jpg"
     },
     {
       quote: "The team at Hudson Virtual has been incredible for our business growth. Their data analysis has helped us identify new opportunities we would have missed.",
       name: "Rebecca L.",
       title: "Marketing Director",
-      image: "/assets/testimonial3.jpg"
+      image: "/logo.jpg"
     },
     {
       quote: "I've been able to focus on strategy and business development since bringing Hudson Virtual on board. The ROI has been tremendous.",
       name: "Michael P.",
       title: "CEO",
-      image: "/assets/testimonial4.jpg"
+      image: "/logo.jpg"
     },
     {
       quote: "The document preparation and project management services have streamlined our operations significantly. I wish we had started working with them sooner!",
       name: "Emma S.",
       title: "Operations Manager",
-      image: "/assets/testimonial5.jpg"
+      image: "/logo.jpg"
     },
     {
       quote: "Hudson Virtual's client support services have elevated our customer experience. Our satisfaction ratings have increased measurably.",
       name: "David K.",
       title: "Customer Service Director",
-      image: "/assets/testimonial6.jpg"
+      image: "/logo.jpg"
     }
   ];
 
