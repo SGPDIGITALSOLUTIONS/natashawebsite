@@ -96,16 +96,16 @@ export default function ServicesPage() {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-white pb-20">
+    <main className="legacy-page">
       {/* Solutions for every need section with colored background */}
-      <section className="max-w-4xl mx-auto px-4 text-center">
-        <div className="rounded-3xl bg-blue-100/70 shadow py-8 px-4 mt-24 mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">Solutions for every need.</h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+      <section className="w-full bg-[#271d7a] px-4 text-center">
+        <div className="max-w-4xl mx-auto py-14">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Solutions for every need.</h1>
+          <p className="text-lg text-purple-100 max-w-2xl mx-auto mb-8">
             From admin support to project management, I offer a flexible range of services to help your business run smoothly and efficiently.
           </p>
           <div className="flex justify-center gap-4 mb-8">
-            <a href="/contact" className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">Get in Touch</a>
+            <a href="/contact" className="bg-[#ffc762] text-[#271d7a] px-6 py-3 rounded-lg font-medium hover:bg-[#f1b64c] transition-colors">Get in Touch</a>
             <a href="/pricing" className="bg-white border border-purple-600 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors">See Pricing</a>
           </div>
         </div>
@@ -115,13 +115,13 @@ export default function ServicesPage() {
       <section className="max-w-6xl mx-auto px-4 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Services Grid */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-md border border-purple-100 p-8">
             <h2 className="text-2xl font-bold text-purple-900 mb-6">Our Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {services.map((service, idx) => (
                 <motion.div
                   key={service.title}
-                  className={`bg-purple-50 rounded-lg p-4 border transition-colors cursor-pointer ${
+                  className={`bg-purple-50 rounded-md p-4 border transition-colors cursor-pointer ${
                     activeIdx === idx ? 'border-purple-400 shadow-md' : 'border-purple-100 hover:border-purple-300'
                   }`}
                   onClick={() => setActiveIdx(idx)}
@@ -140,7 +140,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Real-World Examples */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-md border border-purple-100 p-8">
             <h2 className="text-2xl font-bold text-purple-900 mb-6">What Does It Look Like?</h2>
             <AnimatePresence mode="wait">
               {activeIdx !== null ? (
@@ -150,7 +150,7 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-purple-50 rounded-lg p-6 border border-purple-100"
+                  className="bg-purple-50 rounded-md p-6 border border-purple-100"
                 >
                   <h3 className="font-semibold text-purple-900 text-xl mb-3">{services[activeIdx].example.title}</h3>
                   <p className="text-gray-600 mb-4">
@@ -169,7 +169,7 @@ export default function ServicesPage() {
                     <div className="mt-4">
                       <Link 
                         href={services[activeIdx].example.cta.href}
-                        className="inline-block bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors"
+                        className="inline-block bg-[#ffc762] text-[#271d7a] px-6 py-2 rounded-lg font-medium hover:bg-[#f1b64c] transition-colors"
                       >
                         {services[activeIdx].example.cta.text}
                       </Link>
@@ -193,7 +193,7 @@ export default function ServicesPage() {
         <div className="text-center mt-12">
           <Link 
             href="/contact" 
-            className="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors shadow-lg"
+            className="inline-block bg-[#ffc762] text-[#271d7a] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#f1b64c] transition-colors shadow-lg"
           >
             Let's Solve Your Admin Challenges
           </Link>
@@ -201,4 +201,4 @@ export default function ServicesPage() {
       </section>
     </main>
   );
-} 
+}

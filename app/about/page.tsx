@@ -22,11 +22,11 @@ const clientTypes = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-white pb-20">
+    <main className="legacy-page">
       {/* Hero Section */}
-      <section className="w-full py-16 px-4 text-center bg-gradient-to-tr from-purple-100 via-blue-100 to-white">
+      <section className="w-full py-16 px-4 text-center bg-[#271d7a]">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="flex flex-col items-center">
-          <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-purple-200 shadow-lg mb-6">
+          <div className="w-40 h-40 md:w-56 md:h-56 rounded-md overflow-hidden border-4 border-purple-200 shadow-lg mb-6">
             <Image
               src="/logo.jpg"
               alt="Natasha Hudson"
@@ -36,8 +36,8 @@ export default function AboutPage() {
               priority
             />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">Meet Natasha – Your Admin Unicorn</h1>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Meet Natasha – Your Admin Unicorn</h1>
+          <p className="text-lg text-purple-100 max-w-3xl mx-auto">
             Running a small business or charity is no small feat. You're spinning plates, juggling priorities, and wondering if you ever replied to that email from last week—or was it the week before?
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ export default function AboutPage() {
 
       {/* Main Content */}
       <section className="max-w-4xl mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white rounded-xl shadow-lg p-8 mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white rounded-md border border-purple-100 p-8 mb-12">
           <div className="mb-8">
             <p className="text-gray-700 mb-6">
               I'm Natasha, founder of Hudson Virtual Business Services, and I'm here to help you find space to breathe. I offer calm, practical virtual assistant support to small businesses and charities that are doing brilliant work but need someone dependable behind the scenes to keep things running smoothly.
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
       {/* Values and Client Types Section */}
       <section className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-xl shadow-lg p-8">
+        <div className="bg-white rounded-md border border-purple-100 p-8">
           <h2 className="text-2xl font-semibold text-purple-800 mb-8 text-center">Why Work With Me?</h2>
           
           <div className="mb-12">
@@ -141,7 +141,7 @@ export default function AboutPage() {
             No pressure. Just a genuine conversation to see if I'm the right fit for you and your business.
           </p>
           <div className="space-x-4">
-            <Link href="/contact" className="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors shadow">
+            <Link href="/contact" className="inline-block bg-[#ffc762] text-[#271d7a] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#f1b64c] transition-colors shadow">
               Book a Discovery Call
             </Link>
             <Link href="/contact" className="inline-block bg-white text-purple-600 border-2 border-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors">

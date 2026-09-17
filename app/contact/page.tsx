@@ -7,7 +7,7 @@ export default function Contact() {
   const [state, handleSubmit] = useForm("mjkwnjdl");
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="legacy-page">
       {/* Header */}
       <section className="relative py-20 bg-purple-50">
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -21,10 +21,10 @@ export default function Contact() {
       {/* Contact Form */}
       <section className="py-20 bg-white px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+          <div className="bg-white rounded-md border border-purple-100 overflow-hidden">
             <div className="grid md:grid-cols-5">
               {/* Contact Info */}
-              <div className="md:col-span-2 bg-purple-600 text-white p-8">
+              <div className="md:col-span-2 bg-[#271d7a] text-white p-8">
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-4 mb-8">
                   <p className="flex items-center">
@@ -122,7 +122,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={state.submitting}
-                      className={`w-full py-3 px-4 bg-purple-600 text-white rounded-md font-medium hover:bg-purple-700 transition-colors ${state.submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      className={`w-full py-3 px-4 bg-[#ffc762] text-[#271d7a] rounded-md font-medium hover:bg-[#f1b64c] transition-colors ${state.submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
                       {state.submitting ? 'Sending...' : 'Send Message'}
                     </button>

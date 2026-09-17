@@ -50,7 +50,7 @@ export default function FAQsPage() {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 pt-40 pb-20">
+    <div className="legacy-page faq-page">
       <div className="max-w-3xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-2 text-center">Frequently Asked Questions</h1>
         <p className="text-lg text-gray-600 mb-12 text-center">Everything you need to know about working with Hudson Virtual Business Services</p>
@@ -100,10 +100,10 @@ export default function FAQsPage() {
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6">Still have questions? I'm here to help!</p>
           <a
-            href="https://outlook.office365.com/bookwithme/user/your-bookings-link"
+            href="/contact"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-colors duration-200 hover:bg-purple-800 hover:ring-2 hover:ring-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
+            className="inline-block bg-[#ffc762] text-[#271d7a] px-8 py-3 rounded-lg font-semibold shadow-md transition-colors duration-200 hover:bg-[#f1b64c] hover:ring-2 hover:ring-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
           >
             Book a Free Discovery Call
           </a>

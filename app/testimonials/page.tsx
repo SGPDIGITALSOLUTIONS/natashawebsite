@@ -45,7 +45,7 @@ export default function TestimonialsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="legacy-page">
       {/* Header */}
       <section className="relative py-20 bg-purple-50">
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -66,7 +66,7 @@ export default function TestimonialsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-purple-50 p-8 rounded-xl shadow-lg"
+                className="bg-purple-50 p-8 rounded-md border border-purple-100"
               >
                 <svg className="w-12 h-12 text-purple-300 mb-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path>
@@ -90,7 +90,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-purple-800 text-white px-4 relative overflow-hidden">
+      <section className="py-16 bg-[#6939a8] text-white px-4 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">
             Join our satisfied clients
@@ -98,11 +98,11 @@ export default function TestimonialsPage() {
           <p className="text-xl mb-8">
             Experience the difference professional virtual support can make for your business
           </p>
-          <Link href="/" className="inline-block bg-white text-purple-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-50 transition-colors shadow-lg">
-            Book Your Free Call
+          <Link href="/contact" className="inline-block bg-[#ffc762] text-[#271d7a] px-8 py-4 rounded-md font-semibold hover:bg-[#f1b64c] transition-colors">
+            Arrange a consultation
           </Link>
         </div>
       </section>
     </main>
   );
-} 
+}
