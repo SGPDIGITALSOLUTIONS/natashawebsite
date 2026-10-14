@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -61,11 +58,8 @@ export default function TestimonialsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-purple-50 p-8 rounded-md border border-purple-100"
               >
                 <svg className="w-12 h-12 text-purple-300 mb-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -83,7 +77,7 @@ export default function TestimonialsPage() {
                     <p className="text-gray-500">{testimonial.title}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

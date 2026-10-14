@@ -1,8 +1,6 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaUserTie, FaHandsHelping, FaSmile, FaHeart, FaLightbulb, FaCheck, FaGlobe, FaCalendarAlt, FaEnvelope, FaTools, FaTasks } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 
 const services = [
   { icon: <FaCalendarAlt className="text-purple-600 text-xl" />, label: 'Inbox and diary management' },
@@ -25,7 +23,7 @@ export default function AboutPage() {
     <main className="legacy-page">
       {/* Hero Section */}
       <section className="w-full py-16 px-4 text-center bg-[#271d7a]">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <div className="w-40 h-40 md:w-56 md:h-56 rounded-md overflow-hidden border-4 border-purple-200 shadow-lg mb-6">
             <Image
               src="/logo.jpg"
@@ -40,12 +38,12 @@ export default function AboutPage() {
           <p className="text-lg text-purple-100 max-w-3xl mx-auto">
             Running a small business or charity is no small feat. You're spinning plates, juggling priorities, and wondering if you ever replied to that email from last week—or was it the week before?
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* Main Content */}
       <section className="max-w-4xl mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-white rounded-md border border-purple-100 p-8 mb-12">
+        <div className="bg-white rounded-md border border-purple-100 p-8 mb-12">
           <div className="mb-8">
             <p className="text-gray-700 mb-6">
               I'm Natasha, founder of Hudson Virtual Business Services, and I'm here to help you find space to breathe. I offer calm, practical virtual assistant support to small businesses and charities that are doing brilliant work but need someone dependable behind the scenes to keep things running smoothly.
@@ -98,7 +96,7 @@ export default function AboutPage() {
               When I'm not colour-coding a calendar or fine-tuning a process, you'll find me exploring new places, planning the next adventure, or hunting down the best snacks for a movie night with my girls.
             </p>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Values and Client Types Section */}
@@ -134,7 +132,7 @@ export default function AboutPage() {
 
       {/* Call to Action Section */}
       <section className="text-center mt-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <div>
           <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">Let's Talk</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
             If you're overwhelmed, overstretched, or simply ready to get some brainspace back—let's talk.
@@ -148,7 +146,7 @@ export default function AboutPage() {
               Get in Touch
             </Link>
           </div>
-        </motion.div>
+        </div>
       </section>
     </main>
   );

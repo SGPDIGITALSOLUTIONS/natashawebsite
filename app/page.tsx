@@ -1,14 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const services = [
-  { title: 'Executive administration', detail: 'Inbox management, scheduling and business correspondence.' },
-  { title: 'Board support', detail: 'Meeting preparation, papers and documentation.' },
-  { title: 'Personal assistance', detail: 'Diary management, travel and appointment coordination.' },
-  { title: 'Operations management', detail: 'Process improvement, workflows and project coordination.' },
-  { title: 'Event management', detail: 'Planning, supplier coordination and event logistics.' },
-  { title: 'Bespoke support', detail: 'A tailored service for your specific requirements.' },
-];
+import { services } from '../lib/services';
+import { pageMetadata } from '../lib/seo';
+
+export const metadata = pageMetadata('Virtual Assistant for Small Businesses & Charities', 'Virtual assistant and business support from Natasha Hudson. Get help with administration, board meetings, operations and events. Book a free consultation.', '/');
 
 export default function Home() {
   return (
@@ -17,7 +13,7 @@ export default function Home() {
         <div className="container-wide hero-grid">
           <div>
             <p className="eyebrow eyebrow-light">Hudson Virtual | Business support</p>
-            <h1>Reliable support.<br />More capacity for your business.</h1>
+            <h1>Virtual assistant support for small businesses and charities.</h1>
             <p className="hero-intro">Executive administration and operational support for small businesses and charities. Flexible services tailored to your priorities.</p>
             <div className="action-row">
               <Link href="/contact" className="button button-gold">Arrange a consultation <span aria-hidden="true">→</span></Link>
@@ -25,7 +21,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="hero-portrait">
-            <Image src="/logo.jpg" alt="Natasha Hudson" width={500} height={500} priority />
+            <Image src="/logo.jpg" alt="Natasha Hudson" width={500} height={500} sizes="(max-width: 800px) calc(100vw - 48px), 440px" priority />
             <figcaption><strong>Natasha Hudson</strong><br />Founder, Hudson Virtual</figcaption>
           </figure>
         </div>
@@ -39,7 +35,7 @@ export default function Home() {
         <p className="eyebrow">Services</p>
         <div className="section-heading-row"><h2>Practical support across your organisation.</h2><p>From day-to-day administration to project coordination, choose the support your business needs.</p></div>
         <div className="service-grid">
-          {services.map((service, index) => <Link key={service.title} href="/services" className="service-item"><span className="item-number">{String(index + 1).padStart(2, '0')}</span><h3>{service.title}</h3><p>{service.detail}</p><span className="item-arrow" aria-hidden="true">→</span></Link>)}
+          {services.map((service, index) => <Link key={service.title} href={`/services/${service.slug}`} className="service-item"><span className="item-number">{String(index + 1).padStart(2, '0')}</span><h3>{service.title}</h3><p>{service.intro}</p><span className="item-arrow" aria-hidden="true">→</span></Link>)}
         </div>
       </section>
       <section className="process-section section-pad">
