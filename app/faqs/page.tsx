@@ -1,7 +1,4 @@
-'use client';
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link'
 
 const faqs = [
   {
@@ -30,7 +27,7 @@ const faqs = [
   },
   {
     question: "Is there a minimum number of hours I have to book?",
-    answer: "For retainer clients, I offer packages starting from 10 hours per month. For ad-hoc work, I recommend booking at least 5 hours to ensure efficiency and continuity."
+    answer: "For retainer clients, I offer packages starting from 10 hours per month. On-demand support has a 3-hour minimum purchase. See the pricing page for current rates and terms."
   },
   {
     question: "What if my needs change or I want to pause?",
@@ -46,69 +43,10 @@ const faqs = [
   }
 ];
 
+
 export default function FAQsPage() {
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-
-  return (
-    <div className="legacy-page faq-page">
-      <div className="max-w-3xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2 text-center">Frequently Asked Questions</h1>
-        <p className="text-lg text-gray-600 mb-12 text-center">Everything you need to know about working with Hudson Virtual Business Services</p>
-        
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className="relative"
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
-            >
-              <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold text-purple-700 group-hover:text-purple-800 transition-colors text-center w-full">
-                    {faq.question}
-                  </h2>
-                  <motion.div
-                    animate={{ rotate: hoverIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-purple-600 ml-4"
-                  >
-                    ▼
-                  </motion.div>
-                </div>
-              </div>
-              
-              <AnimatePresence>
-                {hoverIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="bg-white/80 backdrop-blur-sm rounded-b-xl p-6 mt-1 shadow-sm">
-                      <p className="text-gray-600 whitespace-pre-line text-center">{faq.answer}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">Still have questions? I'm here to help!</p>
-          <a
-            href="/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#ffc762] text-[#271d7a] px-8 py-3 rounded-lg font-semibold shadow-md transition-colors duration-200 hover:bg-[#f1b64c] hover:ring-2 hover:ring-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
-          >
-            Book a Free Discovery Call
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-} 
+  return <main>
+    <section className="page-banner"><div className="container-wide"><h1>Virtual assistant FAQs</h1><p>Common questions about working with Hudson Virtual.</p></div></section>
+    <section className="section-pad container-wide service-detail faq-list">{faqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}<p>Explore <Link href="/services" className="text-link">services</Link> and <Link href="/pricing" className="text-link">pricing</Link>, or <Link href="/contact" className="text-link">arrange a free consultation</Link> to discuss your questions.</p></section>
+  </main>
+}

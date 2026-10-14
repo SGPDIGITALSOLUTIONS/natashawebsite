@@ -1,10 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useLandingPage } from '../components/LeadAttribution';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("mjkwnjdl");
+
+  const landingPage = useLandingPage() || '/contact';
+  const reported = useRef(false);
+  useEffect(() => {
+    if (state.succeeded && !reported.current) {
+      reported.current = true;
+      // A consent-aware analytics adapter can listen; no third party receives this event here.
+      window.dispatchEvent(new CustomEvent('hudson:lead', { detail: { event: 'generate_lead', method: 'contact_form', landing_page: landingPage, page_path: '/contact' } }));
+    }
+  }, [state.succeeded, landingPage]);
 
   return (
     <main className="legacy-page">
@@ -52,7 +63,7 @@ export default function Contact() {
               {/* Form */}
               <div className="md:col-span-3 p-8">
                 {state.succeeded ? (
-                  <div className="text-center py-8">
+                  <div className="text-center py-8" role="status">
                     <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -61,6 +72,7 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
+                    <input type="hidden" name="landing_page" value={landingPage} />
                     <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                       <div>
@@ -119,6 +131,7 @@ export default function Contact() {
                       <ValidationError prefix="Message" field="message" errors={state.errors} />
                     </div>
 
+                    <ValidationError errors={state.errors} />
                     <button
                       type="submit"
                       disabled={state.submitting}

@@ -26,3 +26,6 @@ v.1/
 # Misc
 *.md 
 .vercel
+
+# TypeScript cache
+*.tsbuildinfo

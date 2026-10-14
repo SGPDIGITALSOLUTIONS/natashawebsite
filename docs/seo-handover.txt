@@ -1,0 +1,87 @@
+Hudson Virtual — SEO implementation summary
+14 October 2026
+
+Repository: SGPDIGITALSOLUTIONS/natashawebsite
+Public website: https://www.hudsonvirtual.co.uk/
+
+The changes improve how search engines discover, understand and present Hudson
+Virtual's public services. They also make service information and FAQ answers
+available without requiring JavaScript or mouse hover.
+
+Implemented
+
+- Unique titles, descriptions, self-referencing canonical URLs and social
+  metadata for the seven existing pages and six new service pages.
+- A sitemap listing the 13 canonical public pages, plus robots.txt referencing
+  it. No artificial content-modification dates are emitted on every build.
+- A permanent redirect from the apex host to www while preserving the path.
+- Noindex controls for Vercel preview deployments; production remains indexable.
+- Six dedicated service pages based on the services already offered on the site:
+  executive administration, board support, personal assistance, operations
+  management, event management and bespoke support.
+- Direct links from the homepage and services overview to those service pages,
+  plus links to pricing, FAQs, related services and the consultation form.
+- Organization, Person and WebSite structured data with consistent identifiers.
+  Service and BreadcrumbList data appear on the relevant service pages. No
+  ratings, outcomes or new testimonials have been invented.
+- Native FAQ disclosure controls that support keyboard and touch interaction
+  and keep every answer in the initial HTML. The on-demand minimum now agrees
+  with the existing pricing page: three hours.
+- Static server rendering for the informational About and Testimonials pages,
+  removing their animation library from the client page bundles.
+- Locally hosted Montserrat with its OFL licence and font-display swap, removing
+  the Google Fonts CSS request. The source header logo is reduced from roughly
+  192 KiB to 51 KiB, with responsive image sizes and a social-sharing image.
+- First-page attribution in memory across client navigation. The existing
+  Formspree submission includes landing_page. A hudson:lead browser event fires
+  once after confirmed form success; errors are visible and do not count as leads.
+  The event contains page paths and method only, without submitted names,
+  emails or message content. It does not send data to an analytics provider.
+
+Search intent map
+
+Homepage: virtual assistant support for small businesses and charities.
+Services overview: compare the available kinds of business support.
+Executive administration: inbox, diary, correspondence and meeting assistance.
+Board support: papers, meeting administration, documentation and minutes.
+Personal assistance: schedules, travel, appointments and personal administration.
+Operations management: workflows, processes, CRM and project coordination.
+Event management: event planning administration, supplier liaison and logistics.
+Bespoke support: a mixed scope or specific administrative project.
+Pricing: compare on-demand, monthly and project arrangements.
+Contact: enquire or discuss a free consultation.
+
+These are descriptive content targets based on current services, not claims
+that keyword volumes or ranking difficulty have been researched.
+
+Owner actions after release
+
+1. Verify the production domain in Google Search Console and submit sitemap.xml.
+   Inspect the homepage, services overview and one service detail page.
+2. Connect the hudson:lead event to the chosen analytics system under the site's
+   consent policy. Treat it as a successful enquiry, not a qualified lead.
+   Qualification and won-client outcomes need the owner's CRM or enquiry process.
+3. In Formspree, compare enquiries by landing_page. This attribution covers
+   navigation within one loaded site session and resets on reload; it does not
+   identify an organic source or provide multi-session marketing attribution.
+4. Replace or expand existing feedback with client-approved case studies that
+   explain the task, work performed and evidenced outcome. Confirm permission
+   and accuracy before publishing any client identity, quote or numerical result.
+5. Use Search Console impressions and enquiries to refine service titles and
+   content. Assess suitable enquiries and clients acquired alongside traffic.
+6. Measure production Core Web Vitals after sufficient traffic. Source and build
+   improvements do not establish field LCP, INP or CLS results or ranking gains.
+
+The earlier private-dashboard authentication recommendations belong to a
+different repository and are outside this public-site change.
+
+Verification
+
+TypeScript and the production build pass. Browser checks cover all 13 public
+pages, unique titles, canonical and Open Graph URLs, structured data, sitemap
+and robots responses, the apex redirect and an unknown-service 404. Keyboard,
+touch and mobile checks pass. Service and FAQ content is available without
+JavaScript. Contact success and failure were verified with mocked Formspree
+responses; no real enquiry was sent. Browser checks reported no page errors.
+Actual email delivery, Search Console indexing and production field performance
+require their live accounts or deployed-site data and have not been claimed.
