@@ -137,3 +137,6 @@ p { line-height:1.6; }
 .faq-list summary { cursor: pointer; font-weight: 600; color: var(--navy); }
 .faq-list details p { margin: 16px 0 0; white-space: pre-line; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+
+.footer-credit { margin-top:0; margin-bottom:0; padding-bottom:20px; color:var(--muted); font-size:13px; text-align:center; }
+.footer-credit a:hover { color:var(--navy); text-decoration:underline; }
